@@ -4,21 +4,22 @@ This article covers setting up the Raspberry Pi 3 & 4 Model B+ for headless SSH 
 
 
 ## Step 1. Download a lite Raspbian image
-downloaded Raspbian imagefrom here:
-"""[https://www.raspberrypi.org/downloads/raspbian/]
-"""
-## Step 2. Burn the Raspbian image to the SD card
-Balena Etcher
+downloaded [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) imagefrom here:
+[https://www.raspberrypi.org/downloads/raspbian/]
 
-Browse to https://www.balena.io/etcher/
+## Step 2. Burn the Raspbian image to the SD card
+ ![Balena Etcher](/Etcher.png)
+
+Browse to [https://www.balena.io/etcher/]
 Download the version for your operating system
 Run the installer
 
 Put a blank mini SD card and adapter into your machine. No need to format it. You can use a new SD card right out of the package.
 
--Select image - browse to the zip file you downloaded from Raspbian
--Select drive - it may find the SDHC Card automatically
--Click Flash!
+- Select image - browse to the zip file you downloaded from Raspbian
+- Select drive - it may find the SDHC Card automatically
+- Click Flash!
+
 After you flash (burn) the image, Finder (Mac) or File Explorer (Windows) may have trouble seeing it. A simple fix is to pull the SD card out then plug it back in. On a Mac it should appear on the desktop with the name boot. On Windows it should appear in File Explorer with the name boot followed by a drive letter.
 
 
@@ -26,13 +27,13 @@ After you flash (burn) the image, Finder (Mac) or File Explorer (Windows) may ha
 ## Step 3. Enable ssh
 For security reasons, ssh is no longer enabled by default. To enable it you need to place an empty file named ssh (no extension) in the root of the boot disk.
 
-> Mac and Windows instructions (enable ssh)
+ Mac and Windows instructions (enable ssh)
 - Copy a SSH flie and Past at :- /Volumes/boot
 
 ## Step 4. Add network info
 Copy a file and past in the root of boot called: wpa_supplicant.conf. Then edit the file (Add your alpha-2 country code, network name and network password):
 
-"""
+'''
         country=IN
         ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
         update_config=1
@@ -40,7 +41,7 @@ Copy a file and past in the root of boot called: wpa_supplicant.conf. Then edit 
         ssid="NETWORK-NAME"
         psk="PASSWORD"
         }
-"""
+'''
 ## Step 5. Eject the micro SD card
 - Right-click on boot (on your desktop or File Explorer) and select the Eject option
 This is a “logical” eject - meaning it closes files and preps the SD card for removal - you still have to pull the card out yourself
