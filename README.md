@@ -1,7 +1,6 @@
 # Raspberry PI Headless SSH and WI-FI configuration 
 
-This article covers setting up the Raspberry Pi 3 & 4 Model B+ for headless SSH access over WiFi using a Mac or Windows.
-
+setting up the Raspberry Pi 3 & 4 Model B+ for headless SSH access over WiFi
 
 ## Step 1. Download a lite Raspbian image
 downloaded [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) imagefrom here:
