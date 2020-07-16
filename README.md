@@ -31,6 +31,8 @@ For security reasons, ssh is no longer enabled by default. To enable it you need
 
 #### Step 4. Add network info
 Copy a file and past in the root of boot called: wpa_supplicant.conf. Then edit the file (Add your alpha-2 country code, network name and network password):
+    
+    ~~~
     country=IN
     ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
     update_config=1
@@ -38,7 +40,7 @@ Copy a file and past in the root of boot called: wpa_supplicant.conf. Then edit 
     ssid="NETWORK-NAME"
     psk="PASSWORD"
     }
-
+    ~~~
 #### Step 5. Eject the micro SD card
 - Right-click on boot (on your desktop or File Explorer) and select the Eject option
 This is a “logical” eject - meaning it closes files and preps the SD card for removal - you still have to pull the card out yourself
@@ -63,12 +65,12 @@ If the pi won’t respond, press Ctrl-C and try the last command again
 If prompted with a warning just hit enter to accept the default (Yes)
 Type in the password – by default this is raspberry
 > Windows instructions (login over wifi)
--Install Advance ip Scanner
+-![Install Advance ip Scanner](/Advanced IP Scanner.png)
  [https://www.advanced-ip-scanner.com/]
 - 1.scan network
 You can find Raspberry Pi’s IP Address on your network using their hostname.
 
-- 2.Install Putty
+- 2.Install ![Putty](/Putty_SSH.png)
 
     If you already have Putty installed, skip to the next section.
 
@@ -102,15 +104,26 @@ sudo apt-get upgrade -y
 Here are some helpful commands for debugging network and wifi issues on your Pi:
 
 This command should list your network in the first line for wlan0:
-~~~ sudo iwconfig 
+~~~ 
+sudo iwconfig 
 ~~~
 This command should show info for wlan0:
-~~~sudo ifconfig~~~
+~~~
+sudo ifconfig
+~~~
 This command should list your network name:
-~~~sudo iwlist wlan0 scan | grep ESSID~~~
+~~~
+sudo iwlist wlan0 scan | grep ESSID
+~~~
 To edit or review your wifi settings, run this command:
-[sudo nano /etc/wpa_supplicant/wpa_supplicant.conf]
+~~~
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+~~~
 To get the ip address of your pi while remotely logged into it:
-[sudo ip -4 addr show]
+~~~
+sudo ip -4 addr show
+~~~
 On a Mac you can get the ip address of your pi using this command (substitute raspberrypi with your hosts name):
+~~~
 arp -n raspberrypi.local
+~~~
