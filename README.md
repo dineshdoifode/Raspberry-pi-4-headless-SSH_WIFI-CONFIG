@@ -2,11 +2,11 @@
 
 setting up the Raspberry Pi 3 & 4 Model B+ for headless SSH access over WiFi
 
-## Step 1. Download a lite Raspbian image
+######## Step 1. Download a lite Raspbian image
 downloaded [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) imagefrom here:
 [https://www.raspberrypi.org/downloads/raspbian/]
 
-## Step 2. Burn the Raspbian image to the SD card
+#### Step 2. Burn the Raspbian image to the SD card
  ![Balena Etcher](/Etcher.png)
 
 Browse to [https://www.balena.io/etcher/]
@@ -23,34 +23,32 @@ After you flash (burn) the image, Finder (Mac) or File Explorer (Windows) may ha
 
 
  
-## Step 3. Enable ssh
+#### Step 3. Enable ssh
 For security reasons, ssh is no longer enabled by default. To enable it you need to place an empty file named ssh (no extension) in the root of the boot disk.
 
  Mac and Windows instructions (enable ssh)
 - Copy a SSH flie and Past at :- /Volumes/boot
 
-## Step 4. Add network info
+#### Step 4. Add network info
 Copy a file and past in the root of boot called: wpa_supplicant.conf. Then edit the file (Add your alpha-2 country code, network name and network password):
+    country=IN
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    network={
+    ssid="NETWORK-NAME"
+    psk="PASSWORD"
+    }
 
-'''
-        country=IN
-        ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-        update_config=1
-        network={
-        ssid="NETWORK-NAME"
-        psk="PASSWORD"
-        }
-'''
-## Step 5. Eject the micro SD card
+#### Step 5. Eject the micro SD card
 - Right-click on boot (on your desktop or File Explorer) and select the Eject option
 This is a “logical” eject - meaning it closes files and preps the SD card for removal - you still have to pull the card out yourself
-## Step 6. Boot the Raspberry Pi
+#### Step 6. Boot the Raspberry Pi
 - Remove the mini-SD card from the adapter and plug it into the Raspberry Pi
 - Plug a Micro-USB/Type-C power cable into the power port
 - Give the Pi plenty of time to boot up (it can take as much as 90 seconds – or more)
 
  
-## Step 7. Login over Wifi
+#### Step 7. Login over Wifi
  This part assumes that ssh is enabled for your image and that the default user is pi with a password of raspberry.
 
 [NOTE: Your machine must be on the same WiFi network that you configured the Pi for.]
@@ -95,7 +93,7 @@ Congratulations! You can now access your Raspberry Pi over wifi!
 
 If you can’t connect, You may need to make some adjustments for your network.
 
-## Step 8. Get the updates
+#### Step 8. Get the updates
 Once connected over WiFi, the next thing you should do is run some updates:
 ~~~
 sudo apt-get update -y
