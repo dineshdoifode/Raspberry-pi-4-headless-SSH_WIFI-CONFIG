@@ -97,18 +97,19 @@ If you can’t connect, You may need to make some adjustments for your network.
 
 ## Step 8. Get the updates
 Once connected over WiFi, the next thing you should do is run some updates:
-
-[sudo apt-get update -y
+~~~
+sudo apt-get update -y
 sudo apt-get upgrade -y
-]
+~~~
 Here are some helpful commands for debugging network and wifi issues on your Pi:
 
 This command should list your network in the first line for wlan0:
-[sudo iwconfig]
+~~~ sudo iwconfig 
+~~~
 This command should show info for wlan0:
-[sudo ifconfig]
+~~~sudo ifconfig~~~
 This command should list your network name:
-[sudo iwlist wlan0 scan | grep ESSID]
+~~~sudo iwlist wlan0 scan | grep ESSID~~~
 To edit or review your wifi settings, run this command:
 [sudo nano /etc/wpa_supplicant/wpa_supplicant.conf]
 To get the ip address of your pi while remotely logged into it:
