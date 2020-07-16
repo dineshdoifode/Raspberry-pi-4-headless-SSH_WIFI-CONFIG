@@ -103,7 +103,7 @@ Congratulations! You can now access your Raspberry Pi over wifi!
 If you can’t connect, You may need to make some adjustments for your network.
 
 #### Step 8. Get the updates
-![update](https://octodex.github.com/vinyltocat.png)
+![update](/vinyltocat.png)
 
 Once connected over WiFi, the next thing you should do is run some updates:
 ~~~
