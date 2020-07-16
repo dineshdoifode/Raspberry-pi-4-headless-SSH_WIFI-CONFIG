@@ -74,8 +74,11 @@ You can find Raspberry Pi’s IP Address on your network using their hostname.
 - 2.Install [Putty](https://www.putty.org)
     If you already have Putty installed, skip to the next section.
     ![](Putty_SSH.png)
+
     Browse to: https://www.putty.org 
+
     Download the 64-bit MSI (Windows Installer)
+    
     Open it to run the installer (if asked for permission, click Yes)
     Select: Add shortcut to PuTTY on the Desktop
     Login over WiFi using Putty
@@ -100,7 +103,8 @@ Congratulations! You can now access your Raspberry Pi over wifi!
 If you can’t connect, You may need to make some adjustments for your network.
 
 #### Step 8. Get the updates
-![update](https://octodex.github.com/vinyltocat/)
+![update](https://octodex.github.com/vinyltocat.png)
+
 Once connected over WiFi, the next thing you should do is run some updates:
 ~~~
 sudo apt-get update -y
