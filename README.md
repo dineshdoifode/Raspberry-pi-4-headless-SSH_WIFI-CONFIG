@@ -70,8 +70,7 @@ Type in the password – by default this is raspberry
 - 1.scan network
 You can find Raspberry Pi’s IP Address on your network using their hostname.
 
-- 2.Install ![Putty](/Putty_SSH.png)
-
+- 2.Install [Putty](https://www.putty.org)
     If you already have Putty installed, skip to the next section.
 
     Browse to: https://www.putty.org
@@ -83,6 +82,8 @@ You can find Raspberry Pi’s IP Address on your network using their hostname.
 This part assumes that ssh is enabled for your image and that the default user is pi with a password of raspberry.
 
 - 3.Launch Putty
+    ![putty](/Putty_SSH.png)
+
     Set the Host Name (or IP address) field to raspberrypi.local
     By default the Port should be set to 22 and Connection type should be set to SSH
     Click Open
